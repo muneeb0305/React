@@ -38,20 +38,6 @@ export default function App() {
       showAlert(" Light Mode has been enabled","success");
     }
   }
-  const greenMode = ()=>{
-    if(mode ==='light'){
-      setMode('dark')
-      document.body.style.backgroundColor = '#b70000';
-      document.body.style.color = 'white';
-      showAlert(" Red Mode has been enabled","success");
-    }
-    else{
-      setMode('light')
-      document.body.style.backgroundColor = 'white';
-      document.body.style.color = 'black';
-      showAlert(" Light Mode has been enabled","success");
-    }
-  }
   return (
       <>
           {/* <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} greenMode={greenMode}/>
@@ -60,7 +46,7 @@ export default function App() {
             <TextForm showAlert={showAlert} heading= "Enter the text to analyze below" mode={mode}/>
           </div> */}
         <Router>
-          <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} greenMode={greenMode}/>
+          <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode}/>
           <Alert alert={alert}/>
           <div className="container my-3">
             <Routes>
