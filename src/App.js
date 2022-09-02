@@ -27,7 +27,7 @@ export default function App() {
   const toggleMode = ()=>{
     if(mode ==='light'){
       setMode('dark')
-      document.body.style.backgroundColor = 'rgb(22 0 72)';
+      document.body.style.backgroundColor = 'rgb(25 50 70)';
       document.body.style.color = 'white';
       showAlert(" Blue Mode has been enabled","success");
     }
@@ -54,12 +54,17 @@ export default function App() {
   }
   return (
       <>
+          {/* <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} greenMode={greenMode}/>
+          <Alert alert={alert}/>
+          <div className="container my-3">
+            <TextForm showAlert={showAlert} heading= "Enter the text to analyze below" mode={mode}/>
+          </div> */}
         <Router>
           <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} greenMode={greenMode}/>
           <Alert alert={alert}/>
           <div className="container my-3">
             <Routes>
-              <Route exact path="/about" element ={<About />}/>
+              <Route exact path="/about" element ={<About mode={mode}/>}/>
               <Route exact path="/" element= {<TextForm showAlert={showAlert} heading= "Enter the text to analyze below" mode={mode}/>}/>
             </Routes>  
           </div>
